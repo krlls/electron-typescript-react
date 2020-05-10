@@ -1,5 +1,6 @@
 # Electron TypeScript React
 
+[Electron](https://electron.atom.io/) application using [Typescript](https://www.typescriptlang.org/) and [React](https://facebook.github.io/react/).
 
 ### Установка
 

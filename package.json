@@ -1,0 +1,62 @@
+{
+  "name": "electron-typescript-react",
+  "version": "1.0.0",
+  "main": "./build/electron.js",
+  "author": "Ksmi",
+  "license": "MIT",
+  "private": true,
+  "build": {
+    "files": "./build/**/*",
+    "appId": "com.context.app",
+    "productName": "ElectronTypescriptReactApp",
+    "mac": {
+      "target": [
+        {
+          "target": "dmg"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "electron:start": "tsc src/main/electron.ts --outDir ./js && electron ./js/electron.js",
+    "renderer:start": "webpack-dev-server --mode development --open --hot --config webpack.dev.js",
+    "renderer:build": "webpack --mode production --config webpack.prod.js",
+    "electon:prebuild": "tsc src/main/electron.ts --outDir ./build",
+    "build": "NODE_ENV=production yarn renderer:build && yarn electon:prebuild && electron-builder -m"
+  },
+  "dependencies": {
+    "electron-is-dev": "^1.2.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-react": "^7.9.4",
+    "@babel/preset-typescript": "^7.9.0",
+    "@types/electron": "^1.6.10",
+    "@types/node": "^12.12.6",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.7",
+    "awesome-typescript-loader": "^5.2.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.5.3",
+    "node-sass": "^4.14.1",
+    "electron": "^8.2.5",
+    "electron-builder": "^22.6.0",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "image-webpack-loader": "^6.0.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
+    "typescript": "^3.8.3",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^4.2.2"
+  }
+}

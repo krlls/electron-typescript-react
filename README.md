@@ -1,4 +1,5 @@
-# levsha
+# Electron TypeScript React
+
 
 ### Установка
 

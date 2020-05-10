@@ -22,7 +22,7 @@
 
     yarn build
 
-Это запустит сборку react и electron в каталог `./build` и запустить electron-builder, собранные файлы будут храниться в `./dist` 
+Это запустит сборку react и electron в каталог `./build` и electron-builder, собранное приложение будет храниться в `./dist` 
 
 ## Структура
 

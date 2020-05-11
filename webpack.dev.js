@@ -8,6 +8,7 @@ module.exports = merge.smart(baseConfig, {
   devServer: {
     contentBase: path.join(__dirname, '/build'),
     compress: true,
+    hot: true,
     port: 3000
   },
 })

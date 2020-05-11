@@ -19,8 +19,8 @@
   },
   "scripts": {
     "electron:start": "tsc src/main/electron.ts --outDir ./js && electron ./js/electron.js",
-    "renderer:start": "webpack-dev-server --mode development --open --hot --config webpack.dev.js",
-    "renderer:build": "webpack --mode production --config webpack.prod.js",
+    "renderer:start": "webpack-dev-server  --config webpack.dev.js",
+    "renderer:build": "webpack --config webpack.prod.js",
     "electon:prebuild": "tsc src/main/electron.ts --outDir ./build",
     "build": "NODE_ENV=production yarn renderer:build && yarn electon:prebuild && electron-builder -m"
   },
